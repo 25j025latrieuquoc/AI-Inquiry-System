@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+input{
+
+    width: 300px;
+    font-size: 20px;
+}
+
+textarea{
+   width: 300px;
+   height: 150px;
+   
+}
+
+
+button{
+    font-size: 20px;      /*kích thước chữ*/
+    width: 100px;         /*chiều rộng phần tử*/
+    height: 40px;         /*chiều cao phần tử*/
+    font-weight: bold;    /*độ đậm của chữ*/
+    margin: 20px;         /*khoảng cách giữa các phần tử*/
+
+
+
+}
