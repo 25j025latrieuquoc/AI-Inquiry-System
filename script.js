@@ -18,5 +18,24 @@ button.addEventListener("click", function(){
     console.log("メールアドレス:",email);
     console.log("お問い合わせ内容:",message);
 
-   
+// object
+const inquiry ={
+    name: name,
+    email:email,
+    message:message
+
+};
+// Object → JSON
+const jsonData = JSON.stringify(inquiry);
+
+console.log(jsonData);
+
+fetch("http://localhost:8080/api/inquiries", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: jsonData
+});
+
 });
