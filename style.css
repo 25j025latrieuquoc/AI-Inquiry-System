@@ -1,27 +1,58 @@
-h1 {
-    text-align: center;
-    font-size: 40px;
+body {
+    font-family: Arial, sans-serif;
+    background-color:#f5f6f8 ;
+    margin: 0;
+    padding: 50px 20px;
 }
 
-input{
+.container{
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
 
-    width: 300px;
-    font-size: 20px;
+
+h1 {
+
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label{
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold; 
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 textarea{
-   width: 300px;
    height: 150px;
    
 }
 
 
 button{
-    font-size: 20px;      /*kích thước chữ*/
-    width: 100px;         /*chiều rộng phần tử*/
-    height: 40px;         /*chiều cao phần tử*/
-    font-weight: bold;    /*độ đậm của chữ*/
-    margin: 20px;         /*khoảng cách giữa các phần tử*/
+   display: block;
+    width: 120px;
+    height: 45px;
+    margin: 25px auto 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;       
 
 
 
