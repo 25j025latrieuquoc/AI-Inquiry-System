@@ -52,8 +52,16 @@ button{
     font-weight: bold;
     cursor: pointer;
     border: none;
-    border-radius: 5px;       
-
-
-
+    border-radius: 5px;    
+    transition: 0.5s; 
+   
 }
+ /* Khi đưa chuột vào */
+button:hover {
+    transform: scale(1.2);
+}
+
+/* Khi đang bấm */
+button:active {
+    transform: scale(5);
+}  
