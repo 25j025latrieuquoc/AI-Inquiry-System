@@ -53,15 +53,15 @@ button{
     cursor: pointer;
     border: none;
     border-radius: 5px;    
-    transition: 0.5s; 
+    transition: 0.4s; 
    
 }
  /* Khi đưa chuột vào */
 button:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 /* Khi đang bấm */
 button:active {
-    transform: scale(5);
+    transform: scale(1);
 }  
