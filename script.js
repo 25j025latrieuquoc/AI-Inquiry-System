@@ -18,13 +18,50 @@ button.addEventListener("click", function(){
     console.log("メールアドレス:",email);
     console.log("お問い合わせ内容:",message);
 
+
+
+
+//validation email. name   message
+if (name ===""){
+    alert ("お名前を入力してください。");
+    return;
+}
+
+
+
+
+
+
+if (email ===""){
+    alert("メールアドレスを入力してください。");
+    return;
+    }
+
+//kiểm tra email rỗng hay kh ông, nếu rỗng thì thông báo và dừng thực hien =>>
+const emailPattern =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if  (!emailPattern.test(email)){
+    alert ("正しいメールアドレスを入力してください！！");
+    return;
+}
+
+
+
+
+
+
+if (message ===""){
+    alert ("お問い合わせ内容を入力してください。");
+    return;
+    }   
+
+
 // object
 const inquiry ={
     name: name,
     email:email,
     message:message
 
-};
+    };
 // Object → JSON
 const jsonData = JSON.stringify(inquiry);
 
@@ -36,6 +73,19 @@ fetch("http://localhost:8080/api/inquiries", {
         "Content-Type": "application/json"
     },
     body: jsonData
-});
+    })
+    .then (response => {
+        if (!response.ok){
+            throw new Error ("送信に失敗しました。");
+        }
+        return response.json();
+    })
+
+    .then (data=>{
+        console.log("サーバーから回答:",data);
+    })
+    .catch(error =>{
+        console.error("エラー:",error);
+    })
 
 });
