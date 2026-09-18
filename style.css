@@ -1,67 +1,476 @@
+/* =========================
+   Base
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color:#f5f6f8 ;
     margin: 0;
-    padding: 50px 20px;
+    font-family:
+        Arial,
+        "Noto Sans JP",
+        sans-serif;
+
+    background-color: #f4f7fb;
+    color: #1f2937;
 }
 
-.container{
-    width: 500px;
-    margin: 0 auto;
-    padding: 30px;
+
+/* =========================
+   Header
+========================= */
+
+.header {
     background-color: white;
-    border-radius: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+    max-width: 1200px;
+    height: 72px;
+
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
-h1 {
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.company-name {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.company-subtitle {
+    margin-top: 2px;
+
+    font-size: 11px;
+    color: #64748b;
+}
+
+
+/* Navigation */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav a {
+    position: relative;
+
+    padding: 25px 0;
+
+    color: #374151;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #2563eb;
+}
+
+.nav a.active {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 3px;
+
+    background-color: #2563eb;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    min-height: 250px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf3ff,
+            #f8fbff
+        );
+}
+
+.hero-content {
+    width: 1200px;
+
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.hero-label {
+    margin: 0 0 10px;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 0 0 15px;
+
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   Main
+========================= */
+
+.main {
+    padding: 60px 20px 80px;
+}
+
+
+/* =========================
+   Form Card
+========================= */
+
+.form-card {
+    width: 800px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 45px 55px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Form Header */
+
+.form-header {
+    margin-bottom: 40px;
 
     text-align: center;
-    margin-bottom: 30px;
 }
 
-label{
+.form-header h2 {
+    margin: 0 0 12px;
+
+    font-size: 28px;
+}
+
+.form-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.required-text {
+    margin-top: 12px !important;
+
+    text-align: right;
+
+    font-size: 12px !important;
+}
+
+.required-text span {
+    color: #dc2626;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
     display: block;
-    margin-top: 18px;
-    margin-bottom: 6px;
-    font-weight: bold; 
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Required */
+
+.required {
+    display: inline-block;
+
+    margin-left: 8px;
+    padding: 2px 7px;
+
+    background-color: #fee2e2;
+    color: #dc2626;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* Input / Select / Textarea */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
 input,
+select {
+    height: 48px;
+}
+
 textarea {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    height: 180px;
 
-textarea{
-   height: 150px;
-   
+    resize: vertical;
+
+    line-height: 1.6;
 }
 
 
-button{
-   display: block;
-    width: 120px;
-    height: 25px;
-    margin: 5px auto 0;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+/* Focus */
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* Placeholder */
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================
+   Button
+========================= */
+
+.button-area {
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+button {
+    width: 180px;
+    height: 50px;
+
     border: none;
-    border-radius: 5px;    
-    transition: 0.4s; 
-   
-}
- /* Khi đưa chuột vào */
-button:hover {
-    transform: scale(1.5);
+    border-radius: 7px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        transform 0.2s;
 }
 
-/* Khi đang bấm */
+button:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
 button:active {
-    transform: scale(1);
-}  
+    transform: translateY(0);
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    background-color: #172033;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 35px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer strong {
+    font-size: 15px;
+}
+
+.footer p {
+    margin: 5px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+    .header-inner {
+        height: auto;
+
+        padding: 20px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .form-card {
+        padding: 35px 25px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}

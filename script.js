@@ -7,12 +7,24 @@ const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const messageInput =document.querySelector("#message");
 
+const companyNameInput = document.querySelector("#companyName");
+const categoryInput = document.querySelector("#category");
+const subjectInput = document.querySelector("#subject");
+
+
+
+
+
 
 button.addEventListener("click", function(){
     //→ Khi button được click, thực hiện đoạn code bên trong.
     const name = nameInput.value;
     const email = emailInput.value;
     const message =messageInput.value;
+
+    const companyName = companyNameInput.value;
+    const category = categoryInput.value;
+    const subject = subjectInput.value;
 
     console.log("お名前:",name);
     console.log("メールアドレス:",email);
