@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ管理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../images/logo会社2.png">
+                    <p>Customer Support</p>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="nav-item active">
+                    ダッシュボード
+                </a>
+
+                <a href="#" class="nav-item">
+                    お問い合わせ
+                </a>
+
+                <a href="#" class="nav-item">
+                    FAQ / AI
+                </a>
+
+                <a href="#" class="nav-item">
+                    設定
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+                    <h1>お問い合わせ管理</h1>
+                    <p>Customer Support Management</p>
+                </div>
+
+                <div class="admin-user">
+                    管理者
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="content">
+
+                <div class="page-title">
+                    <h2>ダッシュボード</h2>
+                    <p>お問い合わせ状況を確認できます。</p>
+                </div>
+
+
+                <!-- Status Cards -->
+                <div class="status-cards">
+
+                    <div class="status-card">
+                        <p>未対応</p>
+                        <strong>12</strong>
+                    </div>
+
+                    <div class="status-card">
+                        <p>対応中</p>
+                        <strong>5</strong>
+                    </div>
+
+                    <div class="status-card">
+                        <p>完了</p>
+                        <strong>38</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Inquiry List -->
+                <div class="inquiry-section">
+
+                    <div class="section-header">
+                        <h3>最新のお問い合わせ</h3>
+                        <button>一覧を見る</button>
+                    </div>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>件名</th>
+                                <th>お名前</th>
+                                <th>お問い合わせ種別</th>
+                                <th>ステータス</th>
+                                <th>受付日時</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>システムエラーについて</td>
+                                <td>山田 太郎</td>
+                                <td>システムエラー</td>
+                                <td>
+                                    <span class="status pending">
+                                        未対応
+                                    </span>
+                                </td>
+                                <td>2026/09/19 09:15</td>
+                            </tr>
+
+                            <tr>
+                                <td>請求書について</td>
+                                <td>田中 一郎</td>
+                                <td>その他</td>
+                                <td>
+                                    <span class="status working">
+                                        対応中
+                                    </span>
+                                </td>
+                                <td>2026/09/19 08:42</td>
+                            </tr>
+
+                            <tr>
+                                <td>操作方法について</td>
+                                <td>佐藤 花子</td>
+                                <td>操作方法</td>
+                                <td>
+                                    <span class="status completed">
+                                        完了
+                                    </span>
+                                </td>
+                                <td>2026/09/18 17:30</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
