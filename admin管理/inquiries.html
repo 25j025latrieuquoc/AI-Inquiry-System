@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ一覧</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="../images/logo会社2.png" alt="Globalnet Ailes">
+            <p>Customer Support</p>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                ダッシュボード
+            </a>
+
+            <a href="inquiries.html" class="nav-item active">
+                お問い合わせ
+            </a>
+
+            <a href="#" class="nav-item">
+                FAQ / AI
+            </a>
+
+            <a href="#" class="nav-item">
+                設定
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <h1>お問い合わせ管理</h1>
+                <p>Customer Support Management</p>
+            </div>
+
+            <div class="admin-user">
+                管理者
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <div class="page-title">
+                <h2>お問い合わせ一覧</h2>
+                <p>受け付けたお問い合わせを確認できます。</p>
+            </div>
+
+
+            <!-- Search -->
+            <div class="inquiry-tools">
+
+                <input
+                    type="text"
+                    placeholder="キーワードで検索"
+                >
+
+                <select>
+                    <option>すべてのステータス</option>
+                    <option>未対応</option>
+                    <option>対応中</option>
+                    <option>完了</option>
+                </select>
+
+                <select>
+                    <option>すべての種別</option>
+                    <option>製品について</option>
+                    <option>サービスについて</option>
+                    <option>システムエラー</option>
+                    <option>操作方法</option>
+                    <option>その他</option>
+                </select>
+
+            </div>
+
+
+            <!-- Inquiry Table -->
+            <div class="inquiry-section">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>件名</th>
+                            <th>会社名</th>
+                            <th>お名前</th>
+                            <th>お問い合わせ種別</th>
+                            <th>ステータス</th>
+                            <th>受付日時</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>システムエラーについて</td>
+                            <td>ABC株式会社</td>
+                            <td>山田 太郎</td>
+                            <td>システムエラー</td>
+                            <td>
+                                <span class="status pending">
+                                    未対応
+                                </span>
+                            </td>
+                            <td>2026/09/24 09:15</td>
+                        </tr>
+
+                        <tr>
+                            <td>請求書について</td>
+                            <td>XYZ株式会社</td>
+                            <td>田中 一郎</td>
+                            <td>その他</td>
+                            <td>
+                                <span class="status working">
+                                    対応中
+                                </span>
+                            </td>
+                            <td>2026/09/24 08:42</td>
+                        </tr>
+
+                        <tr>
+                            <td>操作方法について</td>
+                            <td>DEF株式会社</td>
+                            <td>佐藤 花子</td>
+                            <td>操作方法</td>
+                            <td>
+                                <span class="status completed">
+                                    完了
+                                </span>
+                            </td>
+                            <td>2026/09/23 17:30</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
