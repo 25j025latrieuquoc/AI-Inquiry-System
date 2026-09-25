@@ -191,68 +191,95 @@
                 </div>
 
 
-                <!-- 内容 -->
-                <div class="form-group">
+               <!-- 添付ファイル -->
+               <div class="form-group">
+            <label for="attachment">
+                添付ファイル
+            </label>
 
-                    <label for="message">
-                        お問い合わせ内容
-                        <span class="required">必須</span>
-                    </label>
+            <div id="dropZone" class="drop-zone">
+                <p class="drop-zone-text">
+                    ファイルをここにドラッグ＆ドロップ<br>
+                    または
+                </p>
+                <label for="attachment" class="file-select-btn">ファイルを選択</label>
+                <input
+                    type="file"
+                    id="attachment"
+                    name="attachment"
+                    accept=".jpg,.jpeg,.png,.webp,.pdf,.xlsx,.xls,.csv,.docx"
+                    hidden
+                >
+            </div>
 
-                    <textarea
-                        id="message"
-                        placeholder="お問い合わせ内容をご入力ください。"
-                    ></textarea>
+    <p id="fileName"></p>
 
+    <p class="file-note">
+        ※画像、PDF、Excel、CSV、Wordなどを添付できます。
+    </p>
+</div>
+
+
+        <!-- 内容 -->
+        <div class="form-group">
+
+        <label for="message">
+            お問い合わせ内容
+            <span class="required">必須</span>
+        </label>
+
+        <textarea
+            id="message"
+            placeholder="お問い合わせ内容をご入力ください。"
+        ></textarea>
+
+    </div>
+                    <!-- Button -->
+                    <div class="button-area">
+
+                        <button
+                            type="button"
+                            id="submitButton"
+                        >
+                            送信する
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <div class="footer-inner">
+
+                <div>
+                    <strong>株式会社　Globalnet Alies</strong>
+                    <p>Customer Support</p>
                 </div>
 
-
-                <!-- Button -->
-                <div class="button-area">
-
-                    <button
-                        type="button"
-                        id="submitButton"
-                    >
-                        送信する
-                    </button>
-
+                <div class="footer-links">
+                    <a href="#">プライバシーポリシー</a>
+                    <a href="#">利用規約</a>
+                    <a href="#">サイトマップ</a>
                 </div>
 
-            </form>
+                <div class="copyright">
+                    © 2026 株式会社　Globalnet Alies
+                </div>
 
-        </div>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div class="footer-inner">
-
-            <div>
-                <strong>株式会社　Globalnet Alies</strong>
-                <p>Customer Support</p>
             </div>
 
-            <div class="footer-links">
-                <a href="#">プライバシーポリシー</a>
-                <a href="#">利用規約</a>
-                <a href="#">サイトマップ</a>
-            </div>
-
-            <div class="copyright">
-                © 2026 株式会社　Globalnet Alies
-            </div>
-
-        </div>
-
-    </footer>
+        </footer>
 
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

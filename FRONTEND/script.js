@@ -11,6 +11,28 @@ const companyNameInput = document.querySelector("#companyName");
 const categoryInput = document.querySelector("#category");
 const subjectInput = document.querySelector("#subject");
 
+const attachmentInput = document.querySelector("#attachment"); // nut bam them file  pdf
+        attachmentInput.addEventListener("change", function() {
+        const attachment = attachmentInput.files[0];
+
+        if (attachment) {
+            console.log("ファイル名:", attachment.name);
+            fileName.textContent = attachment.name;
+        }
+    });
+
+const fileName = document.querySelector("#fileName");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,10 +48,41 @@ button.addEventListener("click", function(){
     const category = categoryInput.value;
     const subject = subjectInput.value;
 
+    const attachment = attachmentInput.files[0];
+    if (attachment){
+            console.log("ファイル名:",attachment.name);
+    }
+
     console.log("お名前:",name);
     console.log("メールアドレス:",email);
     console.log("お問い合わせ内容:",message);
+    // ==== Drag & Drop cho file đính kèm ====
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('attachment');
 
+['dragenter', 'dragover'].forEach(eventName => {
+    dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.classList.add('drag-over');
+    });
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.classList.remove('drag-over');
+    });
+});
+
+dropZone.addEventListener('drop', (e) => {
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        fileInput.files = files;
+        fileInput.dispatchEvent(new Event('change')); // kích hoạt lại logic hiển thị tên file đã có sẵn
+    }
+});
 
 
 
@@ -65,6 +118,42 @@ if (message ===""){
     alert ("お問い合わせ内容を入力してください。");
     return;
     }   
+
+
+
+
+
+
+
+if (attachment) {
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+        "text/csv",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ];
+
+    if (!allowedTypes.includes(attachment.type)) {
+        alert("対応していないファイル形式です。");
+        return;
+    }
+
+    const maxSize = 10 * 1024 * 1024;
+
+    if (attachment.size > maxSize) {
+        alert("添付ファイルは10MB以下にしてください。");
+        return;
+    }
+
+    console.log("添付ファイル:", attachment.name);
+    console.log("ファイルサイズ:", attachment.size);
+}
+
 
 
 // object
