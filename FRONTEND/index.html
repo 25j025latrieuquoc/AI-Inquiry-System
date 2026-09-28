@@ -1,42 +1,102 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>   <!--khai báo dữ liệu HTML5-->
+
+<html lang="ja">  <!--thẻ gốc của trang  
+lang="ja" = nội dung chính là tiếng Nhật.-->
+
+
+
+
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Chứa thông tin cấu hình của trang, không phải nội dung chính hiển thị cho người dùng.-->
 
-    <title>お問い合わせ</title>
+
+    <meta charset="UTF-8">
+<!--Thiết lập bộ mã ký tự UTF-8 để hiển thị tiếng Nhật, Kanji, tiếng Việt...>-->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Làm website hiển thị phù hợp trên điện thoại/tablet.-->
+
+
+
+    <title>お問い合わせ</title> 
+<!--Tên hiển thị trên tab trình duyệt.-->
+
 
     <link rel="stylesheet" href="style.css">
+    <!--kết nối HTML với file CSS là cái này-->
+
 </head>
+<!--phần trên đây là head-->
+
+
+
 
 <body>
+    <!--body chứa toàn bộ nội dung mà khách thấy-->
 
-    <!-- Header -->
+   
     <header class="header">
+         <!-- Header  phần đầu website-->
 
         <div class="header-inner">
+             <!--VD <div class = "header-inner">
+                div là 1 khối chứa  
+                class = "header-inner" la de CSS xac dinh khoi nay -->
+
+
+
+
+
 
             <div class="logo">
+                <!--khoi chua logo-->
+
                 <img src ="images/logo会社.png">
-                <div>
-                  <div></div>
+                <!--hien thi hinh anh-->
+                <!--src = source    duong dan den hinh anh  -->
+
+                <div>  <!--dong khoi lai-->
+
+
+                  <div></div> <!--tao khoang trong de de nhin--> 
+
+
+
+
+
+
                 
                 <div class="company-subtitle">Customer Support</div>
-                </div>
-            </div>
+                </div>  <!--mot khoi khac tuogn tu de css nhin ra-->
+        </div>
+
+
+
+
+
+
+
 
             <nav class="nav">
-     <!-- them chuc nang  duong link dan den o de muc -->>
+                <!--< nav = navigation =khu vuc dieu huong website>-->
+
+
                 <a href="https://globalnet-ailes.com/company"target="_blank">ホーム</a>
+                <!--<a> = anchor= dung de tao link lien ket-->
+                <!--href = dia chi ma link se di den -->
+                <!--bam vao ホーム -> di den duogn link cong ty tren kia-->
                 
                 <!-- khi muon them gi thi vao day   
                 a href="#">サービス</a>
                 <a href="#">サポート</a>-->
+                <!--da ghi chu de phan nay nheeeeeeeeeeeeeeeeee--> 
 
                 <a href="https://globalnet-ailes.com/work-system" target="_blank">システム部</a> 
                 <a href="#" class="active">お問い合わせ</a>
-            </nav>
+            </nav>   
 
         </div>
 
@@ -197,32 +257,31 @@
         添付ファイル
     </label>
 
-    <button type="button" id="attachmentButton" class="attachment-plus">
-        ＋
-    </button>
+    <div class="attachment-area">
 
-    <div id="attachmentMenu" class="attachment-menu">
-
-        <label for="attachment" class="attachment-menu-item">
-            📎 写真やファイルを追加
+        <label for="attachment" class="attachment-plus">
+            ＋
         </label>
 
-        <input
-            type="file"
-            id="attachment"
-            name="attachment"
-            accept=".jpg,.jpeg,.png,.webp,.pdf,.xlsx,.xls,.csv,.docx"
-            hidden
-        >
+   
+        <div id="dropZone" class="drop-zone">
+            ファイルをここにドラッグ＆ドロップ
+        </div>
 
     </div>
 
+    <input
+        type="file"
+        id="attachment"
+        name="attachment"
+        accept=".jpg,.jpeg,.png,.webp,.pdf,.xlsx,.xls,.csv,.docx"
+        multiple 
+        hidden
+    >
+
     <p id="fileName"></p>
 
-    <p class="file-note">
-        ※画像、PDF、Excel、CSV、Wordなどを添付できます。
-    </p>
-
+ 
 </div>
 
         <!-- 内容 -->
