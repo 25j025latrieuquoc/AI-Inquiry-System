@@ -190,35 +190,40 @@
 
                 </div>
 
+<!-- 添付ファイル -->
+<div class="form-group">
 
-               <!-- 添付ファイル -->
-               <div class="form-group">
-            <label for="attachment">
-                添付ファイル
-            </label>
+    <label>
+        添付ファイル
+    </label>
 
-            <div id="dropZone" class="drop-zone">
-                <p class="drop-zone-text">
-                    ファイルをここにドラッグ＆ドロップ<br>
-                    または
-                </p>
-                <label for="attachment" class="file-select-btn">ファイルを選択</label>
-                <input
-                    type="file"
-                    id="attachment"
-                    name="attachment"
-                    accept=".jpg,.jpeg,.png,.webp,.pdf,.xlsx,.xls,.csv,.docx"
-                    hidden
-                >
-            </div>
+    <button type="button" id="attachmentButton" class="attachment-plus">
+        ＋
+    </button>
+
+    <div id="attachmentMenu" class="attachment-menu">
+
+        <label for="attachment" class="attachment-menu-item">
+            📎 写真やファイルを追加
+        </label>
+
+        <input
+            type="file"
+            id="attachment"
+            name="attachment"
+            accept=".jpg,.jpeg,.png,.webp,.pdf,.xlsx,.xls,.csv,.docx"
+            hidden
+        >
+
+    </div>
 
     <p id="fileName"></p>
 
     <p class="file-note">
         ※画像、PDF、Excel、CSV、Wordなどを添付できます。
     </p>
-</div>
 
+</div>
 
         <!-- 内容 -->
         <div class="form-group">

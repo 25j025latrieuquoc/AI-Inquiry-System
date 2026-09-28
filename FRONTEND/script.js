@@ -1,4 +1,5 @@
 
+//khai bao bien
 
 const button = document.querySelector("#submitButton");
 //JavaScript tìm button có: id="submitButton" 
@@ -11,7 +12,20 @@ const companyNameInput = document.querySelector("#companyName");
 const categoryInput = document.querySelector("#category");
 const subjectInput = document.querySelector("#subject");
 
+const attachmentButton = document.querySelector("#attachmentButton");
+const attachmentMenu = document.querySelector("#attachmentMenu");
+    
+
 const attachmentInput = document.querySelector("#attachment"); // nut bam them file  pdf
+const fileName = document.querySelector("#fileName");
+
+
+        attachmentButton.addEventListener("click", function() {
+            attachmentInput.click();
+    });
+
+
+
         attachmentInput.addEventListener("change", function() {
         const attachment = attachmentInput.files[0];
 
@@ -21,7 +35,7 @@ const attachmentInput = document.querySelector("#attachment"); // nut bam them f
         }
     });
 
-const fileName = document.querySelector("#fileName");
+
 
 
 
