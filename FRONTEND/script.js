@@ -86,21 +86,36 @@ function displayFiles() {
 
 
 
-        
+
         fileItem.appendChild(deleteButton);
         // Click file để xem
         fileItem.addEventListener("click", function(event) {
 
-            if (event.target.classList.contains("delete-file")) {
-                return;
-            }
+        if (event.target.classList.contains("delete-file")) {
+            return;
+        }
 
-            const fileUrl = URL.createObjectURL(file);
+        const fileUrl = URL.createObjectURL(file);
+
+        // Ảnh
+        if (file.type.startsWith("image/")) {
 
             window.open(fileUrl, "_blank");
 
-        });
+            return;
+        }
 
+        // PDF
+        if (file.type === "application/pdf") {
+
+            window.open(fileUrl, "_blank");
+
+            return;
+        }
+
+        // Các file khác
+        alert("このファイルはブラウザでプレビューできません。");
+    });
 
 
 

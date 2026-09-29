@@ -484,16 +484,62 @@ button:active {
     gap: 25px;
 }
 
-.attachment-plus {
+    /*=.attachment-plus → hình thức của nút them file =*/  
+.form-group .attachment-plus {
     width: 50px;
     height: 40px;
+
+    margin-bottom: 0;
+
     border: none;
     border-radius: 7px;
     background: #2563eb;
     color: white;
     font-size: 24px;
+    line-height: 1;
+
     cursor: pointer;
+
+     /* Căn dấu + vào chính giữa */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     /*= hieu ung=*/
+      transition:
+        background-color 0.2s,
+        transform 0.2s;
 }
+.form-group .attachment-plus:hover{
+        background-color: #1d4ed8 !important;
+        transform: translateY(-2px);
+}
+
+.form-group .attachment-plus:active{
+         background-color: #2563eb !important;
+         transform:translateY(0);
+        
+}
+
+
+
+    /* Khi đưa chuột vào */
+    .attachment-plus:hover {
+    background-color: #c9d3ee;
+
+    transform: translateY(-2px);
+}
+
+
+    /* Khi bấm */
+    .attachment-plus:active {
+        transform: translateY(0);
+}
+
+
+
+
+
 
 .drop-zone {
     width: 300px;
@@ -509,12 +555,15 @@ button:active {
 
 .drop-zone.dragover {
     border-color: #2563eb;
-    background: #eff6ff;
+    background: #effff7;
 }
 
 
-.fileList {
-    margin-top: 10px;
+#fileList {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .file-item {
