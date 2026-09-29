@@ -351,46 +351,44 @@ button.addEventListener("click", function() {
     console.log(jsonData);
 
 
-    // ==================================================
-    // 10. SEND TO BACKEND
-    // ==================================================
+   // ==================================================
+// 10. SEND TO BACKEND
+// ==================================================
 
-    fetch("http://localhost:8080/api/inquiries", {
+const formData = new FormData();
 
-        method: "POST",
+formData.append("companyName", companyName);
+formData.append("name", name);
+formData.append("email", email);
+formData.append("category", category);
+formData.append("subject", subject);
+formData.append("message", message);
 
-        headers: {
+// Add multiple files
+selectedFiles.forEach(function(file) {
+    formData.append("attachments", file);
+});
 
-            "Content-Type": "application/json"
+fetch("http://localhost:8080/api/inquiries", {
+    method: "POST",
+    body: formData
+})
+.then(function(response) {
 
-        },
+    if (!response.ok) {
+        throw new Error("送信に失敗しました。");
+    }
 
-        body: jsonData
+    return response.json();
+})
+.then(function(data) {
 
-    })
+    console.log("サーバーから回答:", data);
 
-    .then(function(response) {
+})
+.catch(function(error) {
 
-        if (!response.ok) {
-
-            throw new Error("送信に失敗しました。");
-
-        }
-
-        return response.json();
-
-    })
-
-    .then(function(data) {
-
-        console.log("サーバーから回答:", data);
-
-    })
-
-    .catch(function(error) {
-
-        console.error("エラー:", error);
-
+    console.error("エラー:", error);
     });
 
 });
