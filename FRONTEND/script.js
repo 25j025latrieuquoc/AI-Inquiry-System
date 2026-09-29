@@ -93,7 +93,6 @@ attachmentInput.addEventListener("change", function() {
 // 4. DRAG & DROP
 // ==================================================
 
-// Khi kéo file vào khu vực
 dropZone.addEventListener("dragover", function(event) {
 
     event.preventDefault();
@@ -103,32 +102,34 @@ dropZone.addEventListener("dragover", function(event) {
 });
 
 
-// Khi kéo file ra khỏi khu vực
-dropZone.addEventListener("dragleave", function() {
+dropZone.addEventListener("dragleave", function(event) {
+
+    event.preventDefault();
 
     dropZone.classList.remove("dragover");
 
 });
 
 
-// Khi thả file
 dropZone.addEventListener("drop", function(event) {
 
     event.preventDefault();
 
     dropZone.classList.remove("dragover");
 
-    // Lấy các file được kéo vào
     const newFiles = Array.from(event.dataTransfer.files);
 
-    // Thêm vào danh sách file hiện tại
-   selectedFiles = selectedFiles.concat(newFiles);
+    if (newFiles.length === 0) {
+        return;
+    }
+
+    // Thêm file kéo thả vào danh sách
+    selectedFiles = selectedFiles.concat(newFiles);
+
+    // Hiển thị file
     displayFiles();
 
-    
-
 });
-
 
 // ==================================================
 // 5. SUBMIT BUTTON
