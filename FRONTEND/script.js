@@ -31,13 +31,13 @@ function displayFiles() {
 
     fileList.innerHTML = "";
 
-    selectedFiles.forEach(function(file) {
+    selectedFiles.forEach(function(file, index) {
 
         const fileItem = document.createElement("div");
         fileItem.className = "file-item";
 
 
-        // Nếu là ảnh
+        // Noi dung file 
         if (file.type.startsWith("image/")) {
 
             const image = document.createElement("img");
@@ -48,7 +48,40 @@ function displayFiles() {
 
             fileItem.appendChild(image);
 
+        }else{
+            //file khong phai anh 
+            const fileIcon = document.createElement("div");
+
+            fileIcon.className = "file-icon";
+
+            fileIcon.textContent = "📄";
+
+            fileItem.appendChild(fileIcon);
         }
+
+
+     
+        // Dấu X
+        const deleteButton = document.createElement("button");
+
+        deleteButton.type = "button";
+
+        deleteButton.className = "delete-file";
+
+        deleteButton.textContent = "×";
+
+
+        // Xóa file
+        deleteButton.addEventListener("click", function() {
+
+            selectedFiles.splice(index, 1);
+
+            displayFiles();
+
+        });
+
+
+        fileItem.appendChild(deleteButton);
 
 
         // Tên file
@@ -61,7 +94,6 @@ function displayFiles() {
         fileItem.appendChild(fileText);
 
 
-        // Thêm vào danh sách
         fileList.appendChild(fileItem);
 
     });
