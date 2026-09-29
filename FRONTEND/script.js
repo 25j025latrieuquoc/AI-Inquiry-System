@@ -43,6 +43,10 @@ function displayFiles() {
             const image = document.createElement("img");
 
             image.src = URL.createObjectURL(file);
+            image.addEventListener("click",function(){
+                window.open(image.src,"_blank");
+
+            })
 
             image.alt = file.name;
 
@@ -81,9 +85,26 @@ function displayFiles() {
         });
 
 
+
+        
         fileItem.appendChild(deleteButton);
+        // Click file để xem
+        fileItem.addEventListener("click", function(event) {
+
+            if (event.target.classList.contains("delete-file")) {
+                return;
+            }
+
+            const fileUrl = URL.createObjectURL(file);
+
+            window.open(fileUrl, "_blank");
+
+        });
 
 
+
+
+    
         // Tên file
         const fileText = document.createElement("span");
 

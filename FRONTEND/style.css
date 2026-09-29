@@ -538,6 +538,8 @@ button:active {
     border-radius: 6px;
 
     border: 1px solid #d1d5db;
+
+    cursor: pointer;
 }
 .file-icon {
     width: 80px;
