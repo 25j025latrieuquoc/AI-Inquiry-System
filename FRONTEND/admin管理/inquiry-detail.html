@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>お問い合わせ詳細</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            Customer Support
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                ダッシュボード
+            </a>
+
+            <a href="inquiries.html" class="nav-item active">
+                お問い合わせ
+            </a>
+
+            <a href="#" class="nav-item">
+                FAQ / AI
+            </a>
+
+            <a href="#" class="nav-item">
+                設定
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="admin-main">
+
+        <!-- Header -->
+        <header class="admin-header">
+
+            <div>
+                <h1>お問い合わせ詳細</h1>
+                <p>お問い合わせ内容を確認します。</p>
+            </div>
+
+        </header>
+
+
+        <!-- Content -->
+        <section class="detail-container">
+
+            <!-- Customer Information -->
+            <div class="detail-card">
+
+                <div class="detail-card-header">
+                    <h2>顧客情報</h2>
+                </div>
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+                        <span class="detail-label">受付番号</span>
+                        <span class="detail-value">00001</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">顧客コード</span>
+                        <span class="detail-value">C000123</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">会社名</span>
+                        <span class="detail-value">株式会社ABC</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">ご担当者</span>
+                        <span class="detail-value">山田太郎</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">メールアドレス</span>
+                        <span class="detail-value">
+                            yamada@abc.co.jp
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Inquiry Information -->
+            <div class="detail-card">
+
+                <div class="detail-card-header">
+                    <h2>お問い合わせ情報</h2>
+                </div>
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            お問い合わせ種別
+                        </span>
+
+                        <span class="detail-value">
+                            システムエラーについて
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            件名
+                        </span>
+
+                        <span class="detail-value">
+                            ログインできない
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            受付日時
+                        </span>
+
+                        <span class="detail-value">
+                            2026/09/30 10:20
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="message-section">
+
+                    <div class="detail-label">
+                        お問い合わせ内容
+                    </div>
+
+                    <div class="message-box">
+                        ログインしようとしましたが、
+                        エラーが表示されてログインできません。
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Attachments -->
+            <div class="detail-card">
+
+                <div class="detail-card-header">
+                    <h2>添付ファイル</h2>
+                </div>
+
+                <div class="attachment-list">
+
+                    <div class="admin-file">
+                        <span>📄</span>
+                        <span>error-screenshot.png</span>
+                        <button type="button">
+                            開く
+                        </button>
+                    </div>
+
+                    <div class="admin-file">
+                        <span>📄</span>
+                        <span>manual.pdf</span>
+                        <button type="button">
+                            開く
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Status -->
+            <div class="detail-card">
+
+                <div class="detail-card-header">
+                    <h2>対応状況</h2>
+                </div>
+
+                <div class="status-section">
+
+                    <label for="status">
+                        ステータス
+                    </label>
+
+                    <select id="status">
+
+                        <option value="pending">
+                            未対応
+                        </option>
+
+                        <option value="progress">
+                            対応中
+                        </option>
+
+                        <option value="completed">
+                            完了
+                        </option>
+
+                    </select>
+
+                    <button type="button" id="saveStatus">
+                        保存
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI Response -->
+            <div class="detail-card">
+
+                <div class="detail-card-header">
+
+                    <h2>AI回答案</h2>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </div>
+
+                <div class="ai-response-box">
+
+                    お問い合わせありがとうございます。
+
+                    ログインできない場合は、
+                    パスワードを再確認してください。
+
+                    問題が解決しない場合は、
+                    エラー画面のスクリーンショットを
+                    ご確認のうえ、再度お問い合わせください。
+
+                </div>
+
+                <div class="ai-actions">
+
+                    <button type="button">
+                        AI回答を再生成
+                    </button>
+
+                    <button type="button">
+                        回答として使用
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Back -->
+            <div class="detail-back">
+
+                <a href="inquiries.html">
+                    ← お問い合わせ一覧に戻る
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
