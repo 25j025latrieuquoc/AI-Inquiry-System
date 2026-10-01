@@ -385,6 +385,8 @@ fetch("http://localhost:8080/api/inquiries", {
 
     console.log("サーバーから回答:", data);
 
+    alert(data.message);
+
 })
 .catch(function(error) {
 
