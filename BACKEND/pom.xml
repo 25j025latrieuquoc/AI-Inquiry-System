@@ -41,9 +41,10 @@
 
 
 			<!-- SQL Server JDBC Driver --> 
-			<dependency> <groupId>com.microsoft.sqlserver</groupId>
+			<dependency>
+			 	<groupId>com.microsoft.sqlserver</groupId>
 			 	<artifactId>mssql-jdbc</artifactId> 
-
+				<version>13.6.0.jre11</version>
 			</dependency> 
 
 
