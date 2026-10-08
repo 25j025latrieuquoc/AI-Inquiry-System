@@ -18,6 +18,7 @@ const subjectInput = document.querySelector("#subject");
 const attachmentInput = document.querySelector("#attachment");
 const fileList = document.querySelector("#fileList");
 const dropZone = document.querySelector("#dropZone");
+const submitStatus = document.querySelector("#submitStatus");
 
 
 // ==================================================
@@ -43,10 +44,16 @@ function displayFiles() {
             const image = document.createElement("img");
 
             image.src = URL.createObjectURL(file);
-            image.addEventListener("click",function(){
+
+
+            image.addEventListener("click",function(event) {
+
+                event.stopPropagation();
+
                 window.open(image.src,"_blank");
 
-            })
+            });
+
 
             image.alt = file.name;
 
@@ -331,27 +338,26 @@ button.addEventListener("click", function() {
     // 8. OBJECT
     // ==================================================
 
-    const inquiry = {
+    // const inquiry = {
 
-        name: name,
+    //     name: name,
 
-        email: email,
+    //     email: email,
 
-        message: message
+    //     message: message
 
-    };
-
-
-    // ==================================================
-    // 9. OBJECT → JSON
-    // ==================================================
-
-    const jsonData = JSON.stringify(inquiry);
-
-    console.log(jsonData);
+    // };
 
 
-   // ==================================================
+    // // ==================================================
+    // // 9. OBJECT → JSON
+    // // ==================================================
+
+    // const jsonData = JSON.stringify(inquiry);
+
+    // console.log(jsonData);
+
+// ==================================================
 // 10. SEND TO BACKEND
 // ==================================================
 
@@ -364,10 +370,17 @@ formData.append("category", category);
 formData.append("subject", subject);
 formData.append("message", message);
 
-// Add multiple files
+// Add attachments
 selectedFiles.forEach(function(file) {
     formData.append("attachments", file);
 });
+
+// 送信中
+button.disabled = true;
+button.textContent = "送信中...";
+
+submitStatus.textContent = "お問い合わせを送信しています...";
+submitStatus.className = "submit-status loading";
 
 fetch("http://localhost:8080/api/inquiries", {
     method: "POST",
@@ -383,14 +396,46 @@ fetch("http://localhost:8080/api/inquiries", {
 })
 .then(function(data) {
 
-    console.log("サーバーから回答:", data);
+    console.log("お問い合わせ送信成功:", data);
 
-    alert(data.message);
+    // 送信成功
+    submitStatus.textContent = "お問い合わせを送信しました。";
+    submitStatus.className = "submit-status success";
+
+    // Form reset
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+    companyNameInput.value = "";
+    categoryInput.value = "";
+    subjectInput.value = "";
+
+    // Attachment reset
+    selectedFiles = [];
+    attachmentInput.value = "";
+
+    displayFiles();
 
 })
 .catch(function(error) {
 
-    console.error("エラー:", error);
-    });
+    console.error("お問い合わせ送信エラー:", error);
+
+    // 送信失敗
+    submitStatus.textContent =
+        "お問い合わせの送信に失敗しました。もう一度お試しください。";
+
+    submitStatus.className = "submit-status error";
+
+})
+.finally(function() {
+
+    // Button reset
+    button.disabled = false;
+    button.textContent = "送信";
+
+});
+
+
 
 });

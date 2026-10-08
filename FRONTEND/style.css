@@ -659,5 +659,24 @@ button:active {
 }
 
 
+.submit-status {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.submit-status.success {
+    color: #198754;
+}
+
+.submit-status.error {
+    color: #dc3545;
+}
+
+.submit-status.loading {
+    color: #666;
+}
+
 
 
