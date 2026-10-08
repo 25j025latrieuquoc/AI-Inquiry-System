@@ -272,6 +272,7 @@ body {
 
     font-size: 10px;
     font-weight: bold;
+    
 }
 
 
@@ -677,6 +678,8 @@ button:active {
 .submit-status.loading {
     color: #666;
 }
+
+
 
 
 

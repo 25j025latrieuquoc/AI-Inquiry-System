@@ -144,6 +144,22 @@ lang="ja" = nội dung chính là tiếng Nhật.-->
 
             <form>
 
+                   <!-- 顧客コード^^-->
+                     <div class="form-group">
+                    <label for="customerCode">
+                        顧客コード <span class="required">必須</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerCode"
+                        name="customerCode"
+                        maxlength="20"
+                        required
+                    >
+                </div>
+
+
                 <!-- 会社名 -->
                 <div class="form-group">
 
@@ -305,10 +321,9 @@ lang="ja" = nội dung chính là tiếng Nhật.-->
                             id="submitButton"
                         >
                             送信する
-
-                     <p id="submitStatus" class="submit-status"></p>
-                
                         </button>
+
+                        <p id="submitStatus" class="submit-status"></p>
 
                     </div>
 

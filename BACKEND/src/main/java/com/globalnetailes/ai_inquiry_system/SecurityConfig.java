@@ -20,9 +20,12 @@ public class SecurityConfig {
         http
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
-            .csrf(csrf -> csrf
-                .ignoringRequestMatchers("/api/auth/**")
+           .csrf(csrf -> csrf
+           .ignoringRequestMatchers(
+                        "/api/auth/**",
+                        "/api/inquiries"
             )
+        )
 
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()

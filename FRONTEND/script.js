@@ -20,6 +20,7 @@ const fileList = document.querySelector("#fileList");
 const dropZone = document.querySelector("#dropZone");
 const submitStatus = document.querySelector("#submitStatus");
 
+const customerCodeInput = document.querySelector("#customerCode");
 
 // ==================================================
 // 2. ATTACHMENT FILE MANAGEMENT
@@ -224,6 +225,8 @@ button.addEventListener("click", function() {
     const category = categoryInput.value;
     const subject = subjectInput.value;
 
+    const customerCode = customerCodeInput.value.trim();
+
 
     // --------------------------------------------------
     // Kiểm tra thông tin người dùng
@@ -237,11 +240,19 @@ button.addEventListener("click", function() {
     // ==================================================
     // 6. VALIDATION
     // ==================================================
+       
 
     // お名前
     if (name === "") {
 
         alert("お名前を入力してください。");
+
+        return;
+    }
+     //顧客コード
+        if (customerCode ===""){
+
+        alert("顧客コードを入力してください。");
 
         return;
     }
@@ -363,6 +374,7 @@ button.addEventListener("click", function() {
 
 const formData = new FormData();
 
+formData.append("customerCode", customerCode);
 formData.append("companyName", companyName);
 formData.append("name", name);
 formData.append("email", email);
@@ -381,6 +393,8 @@ button.textContent = "送信中...";
 
 submitStatus.textContent = "お問い合わせを送信しています...";
 submitStatus.className = "submit-status loading";
+
+
 
 fetch("http://localhost:8080/api/inquiries", {
     method: "POST",
@@ -402,6 +416,10 @@ fetch("http://localhost:8080/api/inquiries", {
     submitStatus.textContent = "お問い合わせを送信しました。";
     submitStatus.className = "submit-status success";
 
+     // Button → 送信済み
+    button.disabled = true;
+    button.textContent = "送信済み";
+
     // Form reset
     nameInput.value = "";
     emailInput.value = "";
@@ -409,6 +427,7 @@ fetch("http://localhost:8080/api/inquiries", {
     companyNameInput.value = "";
     categoryInput.value = "";
     subjectInput.value = "";
+    customerCodeInput.value = "";
 
     // Attachment reset
     selectedFiles = [];
@@ -429,13 +448,13 @@ fetch("http://localhost:8080/api/inquiries", {
 
 })
 .finally(function() {
-
-    // Button reset
+    if(button.textContent ==="送信中..."){
+         // Button reset
     button.disabled = false;
     button.textContent = "送信";
-
-});
-
+        }
+   
+    });
 
 
 });
