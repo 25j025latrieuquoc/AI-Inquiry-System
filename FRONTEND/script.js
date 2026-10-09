@@ -241,6 +241,13 @@ button.addEventListener("click", function() {
     // 6. VALIDATION
     // ==================================================
        
+    //顧客コード
+    if (customerCode ===""){
+
+        alert("顧客コードを入力してください。");
+
+        return;
+    }
 
     // お名前
     if (name === "") {
@@ -249,14 +256,7 @@ button.addEventListener("click", function() {
 
         return;
     }
-     //顧客コード
-        if (customerCode ===""){
-
-        alert("顧客コードを入力してください。");
-
-        return;
-    }
-
+     
 
     // メールアドレス
     if (email === "") {
